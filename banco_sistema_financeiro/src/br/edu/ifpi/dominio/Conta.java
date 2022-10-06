@@ -29,25 +29,25 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public void depositar(Double valor) {
+    public void depositar(double valor) {
         saldo += valor;
     }
 
-    public void transferir(int i, Conta outra) {
-        if (this.temSaldoSuficiente(i)) {
-            this.saldo -= i;
-            outra.depositar(i);
+    public void transferir(Conta conta2, double valor) {
+        if (this.getSaldo() < valor) {
+            System.out.println("Saldo insuficiente.");
         } else {
-            System.out.println("saldo insusifiente");
+            this.setSaldo(this.getSaldo() - valor);
+            conta2.setSaldo(conta2.getSaldo() + valor);
         }
     }
 
-    public void sacar(Double valor) {
-        saldo -= valor;
-    }
-
-    public boolean temSaldoSuficiente(Double valor) {
-        return this.saldo >= valor;
+    public void sacar(double valor) {
+        if (this.getSaldo() < valor){
+            System.out.println("Saldo insuficiente.");
+        }   else{
+            this.setSaldo(this.getSaldo() - valor);
+        }
     }
 
 }
