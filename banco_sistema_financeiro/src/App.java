@@ -1,6 +1,5 @@
 import java.util.Date;
 import br.edu.ifpi.dominio.*;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 public class App {
