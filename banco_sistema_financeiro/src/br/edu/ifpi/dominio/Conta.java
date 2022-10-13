@@ -3,7 +3,7 @@ package br.edu.ifpi.dominio;
 public class Conta {
     private int numeroAg;
     private int numeroCo;
-    private double saldo;
+    protected double saldo;
     private Cliente cliente;
 
     public Conta(int numeroAg, int numeroCo, double saldo) {
