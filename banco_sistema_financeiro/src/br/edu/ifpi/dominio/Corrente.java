@@ -1,27 +1,15 @@
 package br.edu.ifpi.dominio;
 
 public class Corrente extends Conta {
+    private double chequeEs;
 
-    public Corrente(int numeroAg, int numeroCo, double saldo) {
-        super(numeroAg, numeroCo, saldo);
+    public Corrente(int numeroAg, int numeroCo, double saldo, Cliente cliente1, double chequeEs) {
+        super(numeroAg, numeroCo, saldo, cliente1);
+        this.chequeEs = chequeEs;
     }
 
-    public int getNumeroAg() {
-        return getNumeroAg();
+    @Override
+    public void sacar(double valor) {
+        if (this.getSaldo() < valor);
     }
-
-    public int getNumeroCo() {
-        return getNumeroCo();
-    }
-
-    public double getSaldo() {
-        return getSaldo();
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
-
-    
-
 }

@@ -6,7 +6,7 @@ public class Conta {
     protected double saldo;
     private Cliente cliente;
 
-    public Conta(int numeroAg, int numeroCo, double saldo) {
+    public Conta(int numeroAg, int numeroCo, double saldo, Cliente cliente) {
         this.numeroAg = numeroAg;
         this.numeroCo = numeroCo;
         this.saldo = saldo;
