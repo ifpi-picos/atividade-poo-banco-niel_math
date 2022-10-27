@@ -10,6 +10,16 @@ public class Corrente extends Conta {
 
     @Override
     public void sacar(double valor) {
-        if (this.getSaldo() < valor);
+        if (this.getSaldo() < valor)
+            ;
     }
+
+    public void setChequeEs(double chequeEs) {
+        this.chequeEs = chequeEs;
+    }
+
+    public double getChequeEs() {
+        return chequeEs;
+    }
+
 }
