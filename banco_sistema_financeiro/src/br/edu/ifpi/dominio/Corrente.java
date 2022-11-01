@@ -8,11 +8,11 @@ public class Corrente extends Conta {
         this.chequeEs = chequeEs;
     }
 
+    //a gente tem que fazer pra retornar o valor.
     @Override
     public void sacar(double valor) {
-        if (this.getSaldo() + getChequeEs() >= valor)
-
-            ;
+        if (this.getSaldo() + this.getChequeEs() >= valor);
+        return ;//aqui vai algo
     }
 
     @Override
