@@ -10,9 +10,9 @@ public class App {
         ArrayList<Corrente> listaCorrente = new ArrayList<Corrente>();
         ArrayList<Poupanca> listaPoupanca = new ArrayList<Poupanca>();
         List<String> nCpf = new ArrayList<>();
-        String cpf, nome, data, cidade, rua, bairro;
+        String cpf, nome, data, bairro, cidade, rua;
         int agencia, nConta, nCasa;
-        double saldo, cheque = 1000.00;
+        double saldo = 0, cheque = 1000.00;
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
@@ -40,7 +40,7 @@ public class App {
                         cidade = (scanner.nextLine());
                         cidade = (scanner.nextLine());
                         System.out.print("Bairro: ");
-                        rua = (scanner.nextLine());
+                        bairro = (scanner.nextLine());
                         System.out.print("Rua: ");
                         rua = (scanner.nextLine());
                         System.out.print("Numero: ");
@@ -74,7 +74,7 @@ public class App {
                         cidade = (scanner.nextLine());
                         cidade = (scanner.nextLine());
                         System.out.print("Bairro: ");
-                        rua = (scanner.nextLine());
+                        bairro = (scanner.nextLine());
                         System.out.print("Rua: ");
                         rua = (scanner.nextLine());
                         System.out.print("Numero: ");
