@@ -19,7 +19,7 @@ public class App {
 
         int loop = 0;
         while (loop == 0) {
-        //INTERFACE INICIAL;
+            // INTERFACE INICIAL;
             System.out.println("--------SISTEMA BANCARARIO--------");
             System.out.println("|1| Criar Conta.");
             System.out.println("|2| Entrar na Conta.");
@@ -33,9 +33,9 @@ public class App {
                     System.out.println("|2| Conta Poupança");
                     System.out.print("Digite: ");
                     int respost = scanner.nextInt();
-                    //CONTA CORRENTE;
+                    // CONTA CORRENTE;
                     if (respost == 1) {
-                        //ENDEREÇO/CLIENTE;
+                        // ENDEREÇO/CLIENTE;
                         System.out.println("Endereço: ");
                         System.out.print("Cidade: ");
                         cidade = (scanner.nextLine());
@@ -74,13 +74,12 @@ public class App {
                         if (respostaa == 1) {
                             Notification email = new Email();
                             notification = email;
-                        }
-                        else if (respostaa == 2) {
+                        } else if (respostaa == 2) {
                             Notification sms = new SmS();
-                        notification = sms;
-                       }
+                            notification = sms;
+                        }
                         System.out.println("Conta Corrente: ");
-                        //RANDOM;
+                        // RANDOM;
                         agencia = random.nextInt(100, 1000);
                         nConta = random.nextInt(1000000, 10000000);
                         Endereco endereco = new Endereco(cidade, bairro, rua, nCasa);
@@ -94,14 +93,14 @@ public class App {
 
                         break;
                     }
-                    //CONTA POUPANÇA;
+                    // CONTA POUPANÇA;
                     if (respost == 2) {
                         System.out.println("Endereço: ");
                         System.out.print("Cidade: ");
                         cidade = (scanner.nextLine());
                         cidade = (scanner.nextLine());
                         System.out.print("Bairro: ");
-                        bairro   = (scanner.nextLine());
+                        bairro = (scanner.nextLine());
                         System.out.print("Rua: ");
                         rua = (scanner.nextLine());
                         System.out.print("Numero: ");
@@ -131,25 +130,24 @@ public class App {
                         System.out.println("|2| SMS.");
                         System.out.println("Digite: ");
                         int respostaa = scanner.nextInt();
-                        while(loop2 == 0)
-                        if (respostaa == 1) {
-                            Notification email = new Email();
-                            notification = email;
-                            loop2 = 1;
-                        }
-                        else if (respostaa == 2) {
-                            Notification sms = new SmS();
-                        notification = sms;
-                        loop2 = 1;
-                       } else {
-                        System.out.println("Opção Invalida");
-                        System.out.println("|1| Email.");
-                        System.out.println("|2| SMS.");
-                        System.out.println("Digite: ");
-                        respostaa = scanner.nextInt();
-                       }
+                        while (loop2 == 0)
+                            if (respostaa == 1) {
+                                Notification email = new Email();
+                                notification = email;
+                                loop2 = 1;
+                            } else if (respostaa == 2) {
+                                Notification sms = new SmS();
+                                notification = sms;
+                                loop2 = 1;
+                            } else {
+                                System.out.println("Opção Invalida");
+                                System.out.println("|1| Email.");
+                                System.out.println("|2| SMS.");
+                                System.out.println("Digite: ");
+                                respostaa = scanner.nextInt();
+                            }
                         System.out.println("Conta Poupança: ");
-                        //RANDOM;
+                        // RANDOM;
                         agencia = random.nextInt(100, 1000);
                         nConta = random.nextInt(1000000, 10000000);
                         Endereco endereco = new Endereco(cidade, bairro, rua, nCasa);
@@ -162,89 +160,89 @@ public class App {
 
                         break;
                     }
-                    //INTERFACE 2;
+                    // INTERFACE 2;
                 case 2:
-                System.out.println("Entrar na conta.");
-                System.out.println("|1| Conta Corrente");
-                System.out.println("|2| Conta Poupança");
-                System.out.print("Digite: ");
-                int entre = scanner.nextInt();
-                System.out.print("Informe seu CPF: ");
-                cpf = scanner.nextLine();
-                cpf = scanner.nextLine();
-                while(nCpf.contains(cpf) == false) {
-                    System.out.println("CPF Inválido.");
+                    System.out.println("Entrar na conta.");
+                    System.out.println("|1| Conta Corrente");
+                    System.out.println("|2| Conta Poupança");
+                    System.out.print("Digite: ");
+                    int entre = scanner.nextInt();
                     System.out.print("Informe seu CPF: ");
                     cpf = scanner.nextLine();
-                }
-                if (entre == 1) {
-                    for (Corrente iterable_element : listaCorrente) {
-                        if (cpf.equals(iterable_element.getCliente().getCpf())) {
-                            while(loop3 == 0) {
-                            System.out.println("Selecione sua Operação: ");
-                            System.out.println("|1| Depositar.");
-                            System.out.println("|2| Sacar.");
-                            System.out.println("|3| Transferir.");
-                            int operacao = scanner.nextInt();
-                            if (operacao == 1) {
-                                System.out.println("Digite Valor: ");
-                                Double vdeposito = scanner.nextDouble();
-                                iterable_element.depositar(vdeposito);
-                                iterable_element.mostrarDados();
-                            }
-                            if (operacao == 2) {
-                                System.out.println("Digite Valor: ");
-                                Double vsaque = scanner.nextDouble();
-                                iterable_element.sacar(vsaque);
-                                iterable_element.mostrarDados();
-                            } 
-                            if (operacao == 3) {
-                                System.out.println("Digite Valor: ");
-                                Double vsaque = scanner.nextDouble();
-                                iterable_element.sacar(vsaque);
-                                iterable_element.mostrarDados();
-                            } else if (operacao > 3 || operacao < 1) {
-                                loop3 = 1;
-                            }
-                        } 
-                        } 
+                    cpf = scanner.nextLine();
+                    while (nCpf.contains(cpf) == false) {
+                        System.out.println("CPF Inválido.");
+                        System.out.print("Informe seu CPF: ");
+                        cpf = scanner.nextLine();
                     }
-                }
-                if (entre == 2) {
-                    for (Poupanca iterable_element : listaPoupanca) {
-                        if (cpf.equals(iterable_element.getCliente().getCpf())) {
-                            while(loop3 == 0) {
-                            System.out.println("Selecione sua Operação: ");
-                            System.out.println("|1| Depositar.");
-                            System.out.println("|2| Sacar.");
-                            System.out.println("|3| Transferir.");
-                            int operacao = scanner.nextInt();
-                            if (operacao == 1) {
-                                System.out.println("Digite Valor: ");
-                                Double vdeposito = scanner.nextDouble();
-                                iterable_element.depositar(vdeposito);
-                                iterable_element.mostrarDados();
+                    if (entre == 1) {
+                        for (Corrente iterable_element : listaCorrente) {
+                            if (cpf.equals(iterable_element.getCliente().getCpf())) {
+                                while (loop3 == 0) {
+                                    System.out.println("Selecione sua Operação: ");
+                                    System.out.println("|1| Depositar.");
+                                    System.out.println("|2| Sacar.");
+                                    System.out.println("|3| Transferir.");
+                                    int operacao = scanner.nextInt();
+                                    if (operacao == 1) {
+                                        System.out.println("Digite Valor: ");
+                                        Double vdeposito = scanner.nextDouble();
+                                        iterable_element.depositar(vdeposito);
+                                        iterable_element.mostrarDados();
+                                    }
+                                    if (operacao == 2) {
+                                        System.out.println("Digite Valor: ");
+                                        Double vsaque = scanner.nextDouble();
+                                        iterable_element.sacar(vsaque);
+                                        iterable_element.mostrarDados();
+                                    }
+                                    if (operacao == 3) {
+                                        System.out.println("Digite Valor: ");
+                                        Double vsaque = scanner.nextDouble();
+                                        iterable_element.sacar(vsaque);
+                                        iterable_element.mostrarDados();
+                                    } else if (operacao > 3 || operacao < 1) {
+                                        loop3 = 1;
+                                    }
+                                }
                             }
-                            if (operacao == 2) {
-                                System.out.println("Digite Valor: ");
-                                Double vsaque = scanner.nextDouble();
-                                iterable_element.sacar(vsaque);
-                                iterable_element.mostrarDados();
-                            } 
-                            if (operacao == 3) {
-                                System.out.println("Digite Valor: ");
-                                Double vsaque = scanner.nextDouble();
-                                iterable_element.sacar(vsaque);
-                                iterable_element.mostrarDados();
-                            } else if (operacao > 3 || operacao < 1) {
-                                loop3 = 1;
-                            }
-                        } 
-                        } 
+                        }
                     }
-                }
+                    if (entre == 2) {
+                        for (Poupanca iterable_element : listaPoupanca) {
+                            if (cpf.equals(iterable_element.getCliente().getCpf())) {
+                                while (loop3 == 0) {
+                                    System.out.println("Selecione sua Operação: ");
+                                    System.out.println("|1| Depositar.");
+                                    System.out.println("|2| Sacar.");
+                                    System.out.println("|3| Transferir.");
+                                    int operacao = scanner.nextInt();
+                                    if (operacao == 1) {
+                                        System.out.println("Digite Valor: ");
+                                        Double vdeposito = scanner.nextDouble();
+                                        iterable_element.depositar(vdeposito);
+                                        iterable_element.mostrarDados();
+                                    }
+                                    if (operacao == 2) {
+                                        System.out.println("Digite Valor: ");
+                                        Double vsaque = scanner.nextDouble();
+                                        iterable_element.sacar(vsaque);
+                                        iterable_element.mostrarDados();
+                                    }
+                                    if (operacao == 3) {
+                                        System.out.println("Digite Valor: ");
+                                        Double vsaque = scanner.nextDouble();
+                                        iterable_element.sacar(vsaque);
+                                        iterable_element.mostrarDados();
+                                    } else if (operacao > 3 || operacao < 1) {
+                                        loop3 = 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 case 0:
-                loop = 1;
+                    loop = 1;
             }
         }
     }

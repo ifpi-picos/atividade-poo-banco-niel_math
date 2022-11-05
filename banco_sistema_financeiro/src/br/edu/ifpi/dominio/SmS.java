@@ -6,7 +6,8 @@ public class SmS implements Notification {
     public String toString() {
         return "SmS";
     }
+
     @Override
-    public void sendNotificaton(String operacao, double valor) {    
+    public void sendNotificaton(String operacao, double valor) {
     }
 }

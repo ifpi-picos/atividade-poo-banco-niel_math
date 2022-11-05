@@ -12,18 +12,23 @@ public class Conta {
         this.saldo = saldo;
         this.cliente = cliente;
     }
+
     public int getNumeroCo() {
         return numeroCo;
     }
+
     public double getSaldo() {
         return saldo;
     }
+
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
     public void depositar(double valor) {
         saldo += valor;
     }
+
     public void transferir(Conta conta2, double valor) {
         if (this.getSaldo() < valor) {
             System.out.println("Saldo insuficiente.");
@@ -32,13 +37,15 @@ public class Conta {
             conta2.setSaldo(conta2.getSaldo() + valor);
         }
     }
+
     public void sacar(double valor) {
-        if (this.getSaldo() < valor){
+        if (this.getSaldo() < valor) {
             System.out.println("Saldo insuficiente.");
-        }   else{
+        } else {
             this.setSaldo(this.getSaldo() - valor);
         }
     }
+
     public Cliente getCliente() {
         return cliente;
     }

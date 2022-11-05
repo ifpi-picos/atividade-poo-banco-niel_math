@@ -6,6 +6,7 @@ public class Email implements Notification {
     public String toString() {
         return "Email";
     }
+
     @Override
     public void sendNotificaton(String operacao, double valor) {
     }
