@@ -42,4 +42,8 @@ public class Conta {
     public Cliente getCliente() {
         return cliente;
     }
+
+    public int getNumeroAg() {
+        return numeroAg;
+    }
 }

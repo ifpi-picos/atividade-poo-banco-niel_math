@@ -11,7 +11,7 @@ public class Corrente extends Conta {
     }
     @Override
     public void sacar(double valor) {
-        if (this.getSaldo() + this.getChequeEs() >= valor) {
+        if (this.getSaldo() + this.getChequeEs() <= valor) {
             System.out.println("Saldo Insuficiente.");
         } else {
             this.setSaldo(this.getSaldo() - valor);

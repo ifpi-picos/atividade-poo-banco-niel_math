@@ -148,7 +148,7 @@ public class App {
                         System.out.println("Digite: ");
                         respostaa = scanner.nextInt();
                        }
-                        System.out.print("Conta Poupança: ");
+                        System.out.println("Conta Poupança: ");
                         //RANDOM;
                         agencia = random.nextInt(100, 1000);
                         nConta = random.nextInt(1000000, 10000000);
@@ -156,9 +156,9 @@ public class App {
                         Cliente cliente = new Cliente(nome, cpf, data, endereco);
                         Poupanca poupanca = new Poupanca(agencia, nConta, saldo, cliente);
                         listaPoupanca.add(poupanca);
+                        System.out.format("%d\n", poupanca.getNumeroAg());
                         System.out.format("%d\n", poupanca.getNumeroCo());
-                        System.out.format("%d\n", poupanca.getNumeroCo());
-                        System.out.format("%f\n", poupanca.getSaldo());
+                        System.out.format("%.2f\n", poupanca.getSaldo());
 
                         break;
                     }
@@ -193,6 +193,45 @@ public class App {
                                 iterable_element.mostrarDados();
                             }
                             if (operacao == 2) {
+                                System.out.println("Digite Valor: ");
+                                Double vsaque = scanner.nextDouble();
+                                iterable_element.sacar(vsaque);
+                                iterable_element.mostrarDados();
+                            } 
+                            if (operacao == 3) {
+                                System.out.println("Digite Valor: ");
+                                Double vsaque = scanner.nextDouble();
+                                iterable_element.sacar(vsaque);
+                                iterable_element.mostrarDados();
+                            } else if (operacao > 3 || operacao < 1) {
+                                loop3 = 1;
+                            }
+                        } 
+                        } 
+                    }
+                }
+                if (entre == 2) {
+                    for (Poupanca iterable_element : listaPoupanca) {
+                        if (cpf.equals(iterable_element.getCliente().getCpf())) {
+                            while(loop3 == 0) {
+                            System.out.println("Selecione sua Operação: ");
+                            System.out.println("|1| Depositar.");
+                            System.out.println("|2| Sacar.");
+                            System.out.println("|3| Transferir.");
+                            int operacao = scanner.nextInt();
+                            if (operacao == 1) {
+                                System.out.println("Digite Valor: ");
+                                Double vdeposito = scanner.nextDouble();
+                                iterable_element.depositar(vdeposito);
+                                iterable_element.mostrarDados();
+                            }
+                            if (operacao == 2) {
+                                System.out.println("Digite Valor: ");
+                                Double vsaque = scanner.nextDouble();
+                                iterable_element.sacar(vsaque);
+                                iterable_element.mostrarDados();
+                            } 
+                            if (operacao == 3) {
                                 System.out.println("Digite Valor: ");
                                 Double vsaque = scanner.nextDouble();
                                 iterable_element.sacar(vsaque);
