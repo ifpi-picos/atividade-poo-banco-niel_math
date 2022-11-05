@@ -11,7 +11,7 @@ public class App {
         ArrayList<Poupanca> listaPoupanca = new ArrayList<Poupanca>();
         List<String> nCpf = new ArrayList<>();
         String cpf, nome, data, bairro, cidade, rua;
-        int agencia, nConta, nCasa, loop2 = 0;
+        int agencia, nConta, nCasa, loop2 = 0, loop3 = 0;
         double saldo = 0, cheque = 1000.00;
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
@@ -171,6 +171,7 @@ public class App {
                 int entre = scanner.nextInt();
                 System.out.print("Informe seu CPF: ");
                 cpf = scanner.nextLine();
+                cpf = scanner.nextLine();
                 while(nCpf.contains(cpf) == false) {
                     System.out.println("CPF Inválido.");
                     System.out.print("Informe seu CPF: ");
@@ -179,7 +180,7 @@ public class App {
                 if (entre == 1) {
                     for (Corrente iterable_element : listaCorrente) {
                         if (cpf.equals(iterable_element.getCliente().getCpf())) {
-
+                            while(loop3 == 0) {
                             System.out.println("Selecione sua Operação: ");
                             System.out.println("|1| Depositar.");
                             System.out.println("|2| Sacar.");
@@ -189,8 +190,18 @@ public class App {
                                 System.out.println("Digite Valor: ");
                                 Double vdeposito = scanner.nextDouble();
                                 iterable_element.depositar(vdeposito);
+                                iterable_element.mostrarDados();
                             }
-                        }
+                            if (operacao == 2) {
+                                System.out.println("Digite Valor: ");
+                                Double vsaque = scanner.nextDouble();
+                                iterable_element.sacar(vsaque);
+                                iterable_element.mostrarDados();
+                            } else if (operacao > 3 || operacao < 1) {
+                                loop3 = 1;
+                            }
+                        } 
+                        } 
                     }
                 }
                 case 0:
