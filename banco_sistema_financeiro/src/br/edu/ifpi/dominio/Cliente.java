@@ -12,20 +12,28 @@ public class Cliente {
         this.dataNasc = dataNasc;
         this.endereco = endereco;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-
     public void setDataNasc(String dataNasc) {
         this.dataNasc = dataNasc;
     }
-
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public String getCpf() {
+        return cpf;
+    }
+    public String getDataNasc() {
+        return dataNasc;
+    }
+    public Endereco getEndereco() {
+        return endereco;
     }
 }
